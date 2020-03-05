@@ -23,7 +23,7 @@ namespace OptiApp.Controllers
         public IActionResult Index()
         {
             ViewBag.Title = "Customer List";
-            return View(_customerBL.GetAllData());
+            return View(_customerBL.GetAllData());  
         }
 
         public IActionResult Create() 

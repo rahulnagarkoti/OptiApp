@@ -11904,11 +11904,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\nagar\\source\\repos\\Buisness Layer\\BuisnessLayer.csproj",
+      "projectUniqueName": "C:\\Users\\nagar\\source\\repos\\OptiPackage\\Buisness Layer\\BuisnessLayer.csproj",
       "projectName": "BuisnessLayer",
-      "projectPath": "C:\\Users\\nagar\\source\\repos\\Buisness Layer\\BuisnessLayer.csproj",
+      "projectPath": "C:\\Users\\nagar\\source\\repos\\OptiPackage\\Buisness Layer\\BuisnessLayer.csproj",
       "packagesPath": "C:\\Users\\nagar\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\nagar\\source\\repos\\Buisness Layer\\obj\\",
+      "outputPath": "C:\\Users\\nagar\\source\\repos\\OptiPackage\\Buisness Layer\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\nagar\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -11924,8 +11924,8 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "C:\\Users\\nagar\\source\\repos\\Data Layer\\DataLayer.csproj": {
-              "projectPath": "C:\\Users\\nagar\\source\\repos\\Data Layer\\DataLayer.csproj"
+            "C:\\Users\\nagar\\source\\repos\\OptiPackage\\Data Layer\\DataLayer.csproj": {
+              "projectPath": "C:\\Users\\nagar\\source\\repos\\OptiPackage\\Data Layer\\DataLayer.csproj"
             }
           }
         }
