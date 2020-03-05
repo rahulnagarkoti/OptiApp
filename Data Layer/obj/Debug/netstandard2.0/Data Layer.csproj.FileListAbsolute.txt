@@ -1,0 +1,5 @@
+C:\Users\nagar\source\repos\Data Layer\bin\Debug\netstandard2.0\Data Layer.deps.json
+C:\Users\nagar\source\repos\Data Layer\bin\Debug\netstandard2.0\Data Layer.dll
+C:\Users\nagar\source\repos\Data Layer\obj\Debug\netstandard2.0\Data Layer.AssemblyInfoInputs.cache
+C:\Users\nagar\source\repos\Data Layer\obj\Debug\netstandard2.0\Data Layer.AssemblyInfo.cs
+C:\Users\nagar\source\repos\Data Layer\obj\Debug\netstandard2.0\Data Layer.csprojAssemblyReference.cache

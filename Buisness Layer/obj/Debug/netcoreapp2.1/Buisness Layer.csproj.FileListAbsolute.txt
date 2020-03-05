@@ -1,0 +1,2 @@
+C:\Users\nagar\source\repos\Buisness Layer\obj\Debug\netcoreapp2.1\Buisness Layer.AssemblyInfoInputs.cache
+C:\Users\nagar\source\repos\Buisness Layer\obj\Debug\netcoreapp2.1\Buisness Layer.AssemblyInfo.cs
