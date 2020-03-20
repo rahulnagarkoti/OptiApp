@@ -47,8 +47,11 @@ namespace OptiApp
 
             //app services
             services.AddTransient<ICustomerBL,CustomerBL>();
-            
-
+            services.AddTransient<IProductBL,ProductBL>();
+            services.AddTransient<IDistributorBL, DistrubutorBL>();
+            services.AddTransient<IDoctorBL, DoctorBL>();
+            //services.AddTransient<IAppointmentBL, IAppointmentBL>();
+            services.AddTransient<IOrderBL, OrderBL>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

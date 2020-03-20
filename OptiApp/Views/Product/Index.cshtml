@@ -1,0 +1,18 @@
+﻿@*<div class="form-group">
+        <a class="btn btn-primary" href="#" role="button">Add New</a>
+    </div>*@
+<div id="pqGrid"></div>
+
+<script>
+    $(function () {
+
+        var columns = [
+            { title: "Product Name", editable: false, dataIndx: "name", width: 300, dataType: "string", filter: { type: 'textbox', condition: 'begin', listeners: ['keyup'] } },
+            { title: "Stock Count", editable: false, dataIndx: "stockCount", width: 100, dataType: "float", align: "left", filter: { type: 'textbox', condition: 'begin', listeners: ['keyup'] } }
+        ]
+            GlobalFunc.IndexGrid("#pqGrid", "Products List", "Product", columns, "Product/GetAllData");
+    });
+
+
+
+</script>

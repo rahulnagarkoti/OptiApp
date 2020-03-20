@@ -1,0 +1,15 @@
+﻿
+<div id="pqGrid"></div>
+
+<script>
+    $(function () {
+        var columns = [
+            { title: "Distributor Name", editable: false, dataIndx: "name", width: 300, dataType: "string", filter: { type: 'textbox', condition: 'begin', listeners: ['keyup'] } },
+            { title: "Contact Person", editable: false, dataIndx: "contactPerson", width: 100, dataType: "float", align: "left", filter: { type: 'textbox', condition: 'begin', listeners: ['keyup'] } }
+        ]
+        GlobalFunc.IndexGrid("#pqGrid", "Distributor List", "Distributor", columns, "Distributor/GetAllData");
+    });
+
+
+
+</script>

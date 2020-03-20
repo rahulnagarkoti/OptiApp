@@ -25,9 +25,17 @@ namespace DataLayer.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<string>("Address")
+                        .IsRequired()
+                        .HasMaxLength(50);
+
                     b.Property<string>("ContactNumber")
                         .IsRequired()
                         .HasMaxLength(50);
+
+                    b.Property<DateTime>("DOB");
+
+                    b.Property<int>("Gender");
 
                     b.Property<string>("Name")
                         .IsRequired()

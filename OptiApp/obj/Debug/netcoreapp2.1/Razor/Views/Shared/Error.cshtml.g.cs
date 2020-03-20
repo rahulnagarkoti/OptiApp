@@ -23,8 +23,13 @@ using OptiApp.Models;
 
 #line default
 #line hidden
+#line 3 "C:\Users\nagar\source\repos\OptiPackage\OptiApp\Views\_ViewImports.cshtml"
+using TagHelpers;
+
+#line default
+#line hidden
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"583387379a597938339285f5a623245873b0a91c", @"/Views/Shared/Error.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"24b2f30fc3ab36f643e922c1fdbdccfe26ea0c36", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"d445fc6edb52e0407948a42a0157dda97a291bcd", @"/Views/_ViewImports.cshtml")]
     public class Views_Shared_Error : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<ErrorViewModel>
     {
         #pragma warning disable 1998

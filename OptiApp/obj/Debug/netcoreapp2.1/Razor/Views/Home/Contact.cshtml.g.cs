@@ -23,8 +23,13 @@ using OptiApp.Models;
 
 #line default
 #line hidden
+#line 3 "C:\Users\nagar\source\repos\OptiPackage\OptiApp\Views\_ViewImports.cshtml"
+using TagHelpers;
+
+#line default
+#line hidden
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"b93df4061ff384cf01ca37cf92dff41c251f235f", @"/Views/Home/Contact.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"24b2f30fc3ab36f643e922c1fdbdccfe26ea0c36", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"d445fc6edb52e0407948a42a0157dda97a291bcd", @"/Views/_ViewImports.cshtml")]
     public class Views_Home_Contact : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         #pragma warning disable 1998

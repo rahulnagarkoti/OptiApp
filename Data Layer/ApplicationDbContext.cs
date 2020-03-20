@@ -19,6 +19,8 @@ namespace DataLayer
         public DbSet<Distributors> Distributors { get; set; }
         public DbSet<LensTypes> LensTypes { get; set; }
         public DbSet<Products> Products { get; set; }
+        public DbSet<Order> Order { get; set; }
+        public DbSet<Appointments> Appointments { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

@@ -9,10 +9,10 @@ namespace BuisnessLayer.Interface
 {
     public interface ICustomerBL
     {
-        IEnumerable<Customers> GetAllData();
-        Customers GetData(int Id);
-        DataResult Create(Customers data);
-        DataResult Edit(Customers data);
-        DataResult Delete(int Id);
+        Task<IEnumerable<Customers>> GetAllData();
+        Task<Customers> GetData(int Id);
+        Task<DataResult> Create(Customers data);
+        Task<DataResult> Edit(Customers data);
+        Task<DataResult> Delete(int Id);
     }
 }

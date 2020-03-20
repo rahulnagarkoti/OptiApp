@@ -1,0 +1,18 @@
+﻿@*<div class="form-group">
+        <a class="btn btn-primary" href="#" role="button">Add New</a>
+    </div>*@
+<div id="pqGrid"></div>
+
+<script>
+    $(function () {
+
+        var columns = [
+            { title: "Name", editable: false, dataIndx: "name", width: 200, dataType: "string" },
+            { title: "Stock Count", editable: false, dataIndx: "stockCount", width: 100, dataType: "float", align: "left" }];
+
+            GlobalFunc.IndexGrid("#pqGrid","Appointments List","Appointment",columns,"Appointment/GetAllData");
+    });
+
+
+
+</script>

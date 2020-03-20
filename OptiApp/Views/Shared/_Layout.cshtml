@@ -5,11 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - OptiApp</title>
 
-    <environment include="Development">
+    <environment>
+        <link href="~/pqGrid/pqgrid.min.css" rel="stylesheet" />
+        <link href="~/lib/jquery-ui-1.12.1/jquery-ui.css" rel="stylesheet" />
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
         <link rel="stylesheet" href="~/css/site.css" />
-        <link href="~/pqGrid/pqgrid.min.css" rel="stylesheet" />
+        <link href="~/css/custom.css" rel="stylesheet" />
+        <link href="~/css/select2.min.css" rel="stylesheet" />
     </environment>
+    @RenderSection("CSS", required: false)
+
 
 </head>
 <body>
@@ -25,10 +30,12 @@
                 <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">OptiApp</a>
             </div>
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li><a asp-area="" asp-controller="Customer" asp-action="Index">Customers</a></li>
-                    <li><a asp-area="" asp-controller="Products" asp-action="About">Products</a></li>
-                    <li><a asp-area="" asp-controller="Appointments" asp-action="Contact">Appointments</a></li>
+                <ul class="nav navbar-nav">                    
+                    <li><a asp-area="" asp-controller="Customer" asp-action="Index" data-ajax="true"  data-ajax-method="get" data-ajax-mode="replace" data-ajax-update='#main-body'>Customers</a></li>
+                    <li><a asp-area="" asp-controller="Product" asp-action="Index" data-ajax="true"  data-ajax-method="get" data-ajax-mode="replace" data-ajax-update='#main-body'>Products</a></li>
+                    <li><a asp-area="" asp-controller="Distributor" asp-action="Index" data-ajax="true"  data-ajax-method="get" data-ajax-mode="replace" data-ajax-update='#main-body'>Distributors</a></li>
+                    <li><a asp-area="" asp-controller="Appointments" asp-action="Index" data-ajax="true"  data-ajax-method="get" data-ajax-mode="replace" data-ajax-update='#main-body'>Appointments</a></li>
+
                 </ul>
                 <partial name="_LoginPartial" />
             </div>
@@ -38,20 +45,33 @@
     <partial name="_CookieConsentPartial" />
 
     <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; 2020 - OptiApp</p>
-        </footer>
+        <br />
+        <div class="panel panel-default">
+            <div class="panel-heading"></div>
+            <div class="panel-body panel-height ">
+                <div id="main-body">
+                    @RenderBody()
+                </div>
+            </div>
+            <div class="panel-footer">@@Opti2020</div>
+        </div>
     </div>
 
     <environment>
         <script src="~/lib/jquery/dist/jquery.js"></script>
+        <script src="~/lib/jquery-ui-1.12.1/jquery-ui.js"></script>
+        <script src="~/lib/jquery.unobtrusive-ajax.js"></script>
+        <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+        <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+        <script src="~/pqGrid/pqgrid.min.js"></script>
         <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
         <script src="~/js/site.js" asp-append-version="true"></script>
-        <script src="~/pqGrid/pqgrid.min.js"></script>
+        <script src="~/GlobalFunc.js"></script>
+        <script src="~/lib/notify.min.js"></script>
+        <script src="~/lib/select2.full.min.js"></script>
+
     </environment>
-    
+
 
     @RenderSection("Scripts", required: false)
 </body>

@@ -54,6 +54,10 @@
               "version": "[2.1.0, )",
               "autoReferenced": true
             },
+            "Microsoft.jQuery.Unobtrusive.Ajax": {
+              "target": "Package",
+              "version": "[3.2.6, )"
+            },
             "System.Linq": {
               "target": "Package",
               "version": "[4.3.0, )"
@@ -118,6 +122,10 @@
               "target": "Package",
               "version": "[2.1.0, )",
               "autoReferenced": true
+            },
+            "Microsoft.jQuery.Unobtrusive.Ajax": {
+              "target": "Package",
+              "version": "[3.2.6, )"
             },
             "System.ComponentModel.Annotations": {
               "target": "Package",

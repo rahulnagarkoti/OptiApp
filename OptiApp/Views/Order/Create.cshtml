@@ -1,0 +1,51 @@
+﻿@model DataLayer.ViewModels.OrderViewModel
+@inject BuisnessLayer.Interface.IProductBL _product
+@{
+    var data = await _product.GetAllData();
+    var list = data.Select(a => new SelectListItem()
+    {
+        Value = a.Id.ToString(),
+        Text = a.Name
+    })
+                          .ToList();
+
+}
+
+<div class="col-lg-10">
+    <form asp-action="Create" data-ajax="true" data-ajax-method="post" data-ajax-mode="after" data-ajax-update="#main-body" data-ajax-complete="callback">
+        <div class="row">
+            <div class="form-group col-md-6">
+                <label asp-for="CustomerId"></label>
+                <select asp-for="CustomerId" class="form-control" asp-items="@list" )">
+                    <option value="0">Select..</option>
+                </select>
+                <span asp-validation-for="CustomerId" class="text-danger"></span>
+            </div>
+            <div class="form-group col-md-2">
+                <label asp-for="LeftEye"></label>
+                <input  autocomplete="off"  autocomplete="off"  autocomplete="off" asp-for="LeftEye" class="form-control" />
+                <span asp-validation-for="LeftEye" class="text-danger"></span>
+            </div> 
+            <div class="form-group col-md-2">
+                <label asp-for="RightEye"></label>
+                <input  autocomplete="off"  autocomplete="off"  autocomplete="off" asp-for="RightEye" class="form-control" />
+                <span asp-validation-for="RightEye" class="text-danger"></span>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <a asp-area="" asp-controller="Order" asp-action="Index" id="IndexCall" class="btn btn-secondary" data-ajax="true" data-ajax-method="get" data-ajax-mode="replace" data-ajax-update='#main-body'>Cancel</a>
+    </form>
+</div>
+<script>
+    function callback(res) {
+        debugger;
+        //Success
+        if (res.responseJSON['status'] == 1) {
+            $.notify("Success ...", "success");
+            $("#IndexCall").click();
+        }
+        else {
+            $.notify(res.responseJSON['message'], "error");
+        }
+    }
+</script>

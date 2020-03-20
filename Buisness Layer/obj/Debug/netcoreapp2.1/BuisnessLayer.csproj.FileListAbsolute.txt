@@ -11,3 +11,16 @@ C:\Users\nagar\source\repos\Buisness Layer\obj\Debug\netcoreapp2.1\BuisnessLayer
 C:\Users\nagar\source\repos\Buisness Layer\obj\Debug\netcoreapp2.1\BuisnessLayer.pdb
 C:\Users\nagar\source\repos\Buisness Layer\bin\Debug\netcoreapp2.1\BuisnessLayer.runtimeconfig.json
 C:\Users\nagar\source\repos\Buisness Layer\bin\Debug\netcoreapp2.1\BuisnessLayer.runtimeconfig.dev.json
+C:\Users\nagar\source\repos\OptiPackage\Buisness Layer\bin\Debug\netcoreapp2.1\BuisnessLayer.deps.json
+C:\Users\nagar\source\repos\OptiPackage\Buisness Layer\bin\Debug\netcoreapp2.1\BuisnessLayer.runtimeconfig.json
+C:\Users\nagar\source\repos\OptiPackage\Buisness Layer\bin\Debug\netcoreapp2.1\BuisnessLayer.runtimeconfig.dev.json
+C:\Users\nagar\source\repos\OptiPackage\Buisness Layer\bin\Debug\netcoreapp2.1\BuisnessLayer.dll
+C:\Users\nagar\source\repos\OptiPackage\Buisness Layer\bin\Debug\netcoreapp2.1\BuisnessLayer.pdb
+C:\Users\nagar\source\repos\OptiPackage\Buisness Layer\bin\Debug\netcoreapp2.1\DataLayer.dll
+C:\Users\nagar\source\repos\OptiPackage\Buisness Layer\bin\Debug\netcoreapp2.1\DataLayer.pdb
+C:\Users\nagar\source\repos\OptiPackage\Buisness Layer\obj\Debug\netcoreapp2.1\BuisnessLayer.csprojAssemblyReference.cache
+C:\Users\nagar\source\repos\OptiPackage\Buisness Layer\obj\Debug\netcoreapp2.1\BuisnessLayer.AssemblyInfoInputs.cache
+C:\Users\nagar\source\repos\OptiPackage\Buisness Layer\obj\Debug\netcoreapp2.1\BuisnessLayer.AssemblyInfo.cs
+C:\Users\nagar\source\repos\OptiPackage\Buisness Layer\obj\Debug\netcoreapp2.1\BuisnessLayer.csproj.CopyComplete
+C:\Users\nagar\source\repos\OptiPackage\Buisness Layer\obj\Debug\netcoreapp2.1\BuisnessLayer.dll
+C:\Users\nagar\source\repos\OptiPackage\Buisness Layer\obj\Debug\netcoreapp2.1\BuisnessLayer.pdb

@@ -1,0 +1,16 @@
+﻿
+<div id="pqGrid"></div>
+
+<script>
+    $(function () {
+
+        var columns = [
+            { title: "Name", editable: false, dataIndx: "name", width: 200, dataType: "string" },
+            { title: "Contact Number", editable: false, dataIndx: "contactNumber", width: 300, dataType: "float", align: "left" }];
+
+            GlobalFunc.IndexGrid("#pqGrid","Doctors List","Doctor",columns,"Doctor/GetAllData");
+    });
+
+
+
+</script>

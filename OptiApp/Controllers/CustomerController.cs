@@ -14,54 +14,78 @@ namespace OptiApp.Controllers
     public class CustomerController : Controller
     {
         private readonly ICustomerBL _customerBL;
-        public CustomerController(ICustomerBL customerBL) 
+        public CustomerController(ICustomerBL customerBL)
         {
-           _customerBL = customerBL;
+            _customerBL = customerBL;
         }
 
         // GET: /<controller>/
         public IActionResult Index()
         {
             ViewBag.Title = "Customer List";
-            return View(_customerBL.GetAllData());  
+            return PartialView(_customerBL.GetAllData());
         }
 
-        public IActionResult Create() 
+        public IActionResult Create()
         {
-            return View();
+            return PartialView();
         }
 
         [HttpPost]
-        public IActionResult Create(Customers customer)
-        {
-            if (ModelState.IsValid) 
-            {
-                _customerBL.Create(customer);
-                RedirectToAction("Index");
-            }
-
-            return View(customer);
-        }
-
-        public IActionResult GetData(int id)
-        {
-            return View(_customerBL.GetData(id));
-        }
-
-        [HttpPost]
-        public IActionResult Edit(Customers customer)
+        public async Task<DataResult> Create(Customers customer)
         {
             if (ModelState.IsValid)
             {
-                var res=_customerBL.Edit(customer);
-                if (res.Status== Status.Success)
-                   RedirectToAction("Index");
-                else
-                    return View(customer);
+                var result = await _customerBL.Create(customer);
+                return result;
+            }
+
+            return new DataResult() { Status = Status.Failed, Message = "" };
+        }
+
+        public async Task<IActionResult> Edit(int id)
+        {
+            var data = await _customerBL.GetData(id);
+            return PartialView(data);
+        }
+
+        [HttpPost]
+        public async Task<DataResult> Edit(Customers customer)
+        {
+            if (ModelState.IsValid)
+            {
+                var res = await _customerBL.Edit(customer);
+                return res;
 
             }
-            return View(customer);
+            return new DataResult { Status = Status.Failed, Message = "All fields are required!!" };
 
+        }
+
+        public async Task<IActionResult> Details(int id)
+        {
+            var data = await _customerBL.GetData(id);
+
+            return PartialView("Details", data);
+        }
+
+        public async Task<IEnumerable<Customers>> GetAllData()
+        {
+            return await _customerBL.GetAllData();
+        }
+
+        public async Task<IActionResult> DeleteView(int id)
+        {
+            var data = await _customerBL.GetData(id);
+
+            return PartialView("Details", data);
+        }
+
+        [HttpPost]
+        public async Task<DataResult> Delete(int id)
+        {
+            var result = await _customerBL.Delete(id);
+            return result;
         }
 
     }

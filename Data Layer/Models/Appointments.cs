@@ -14,27 +14,14 @@ namespace DataLayer.Models
         [Required]
         public int CustomerId { get; set; }
         [ForeignKeyAttribute("CustomerId")]
-        public Customers Customer { get; set; }
-
-
-        [Required]
-        public bool CheckupDone { get; set; }
+        public Customers Customer { get; set; }      
 
         public int? DoctorId { get; set; }
         [ForeignKeyAttribute("DoctorId")]
         public Doctors Doctor { get; set; }
 
         [Required]
-        public DateTime VisitDate { get; set; }
-
-        [Required]
-        public bool PurchasedLens { get; set; }
-
-        public int? LensType { get; set; }
-
-        [ForeignKeyAttribute("LensType")]
-        public LensTypes LensTypes { get; set; }
-
+        public DateTime VisitDate { get; set; }       
 
         [StringLength(20)]
         public string LeftEye { get; set; }
@@ -44,13 +31,6 @@ namespace DataLayer.Models
 
         [StringLength(150)]
         public string Description { get; set; }
-
-        public bool? IsDelivered { get; set; }
-
-        public decimal? TotalAmount { get; set; }
-        public decimal? AdvanceAmount { get; set; }
-
-        public DateTime? DeliveryDate { get; set; }
 
     }
 }
