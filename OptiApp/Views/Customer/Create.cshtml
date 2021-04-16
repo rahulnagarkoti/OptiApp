@@ -4,35 +4,35 @@
 
     <form asp-action="Create" data-ajax="true" data-ajax-method="post" data-ajax-mode="after" data-ajax-update="#main-body" data-ajax-complete="callback">
         <div class="row">
-            <div class="form-group col-md-6">
+            <div class="form-group col-md-4">
                 <label asp-for="Name"></label>
-                <input  autocomplete="off"  autocomplete="off" asp-for="Name" class="form-control" />
+                <input   asp-for="Name" class="form-control" />
                 <span asp-validation-for="Name" class="text-danger"></span>
             </div>
 
-            <div class="form-group col-md-3">
+            <div class="form-group col-md-2">
                 <label asp-for="Gender"></label>
                 <select asp-for="Gender" class="form-control" asp-items="Html.GetEnumSelectList<DataLayer.ViewModels.Gender>()">
-                    <option selected="selected" value="">Please select</option>
+                    <option selected="selected" value="">select..</option>
                 </select>
                 <span asp-validation-for="Gender" class="text-danger"></span>
             </div>
 
-            <div class="form-group col-md-3">
+            <div class="form-group col-md-2">
                 <label asp-for="DOB"></label>
-                <input  autocomplete="off"  autocomplete="off" asp-for="DOB" class="form-control" type="date" />
+                <input  asp-for="DOB" class="form-control" type="date" />
                 <span asp-validation-for="DOB" class="text-danger"></span>
             </div>
         </div>
         <div class="row">
-            <div class="form-group col-md-6">
+            <div class="form-group col-md-4">
                 <label asp-for="ContactNumber"></label>
-                <input  autocomplete="off"  autocomplete="off" asp-for="ContactNumber" class="form-control" />
+                <input   asp-for="ContactNumber" class="form-control" />
                 <span asp-validation-for="ContactNumber" class="text-danger"></span>
 
             </div>
 
-            <div class="form-group col-md-6">
+            <div class="form-group col-md-4">
                 <label asp-for="Address"></label>
                 <textarea asp-for="Address" class="form-control" />
                 <span asp-validation-for="Address" class="text-danger"></span>
@@ -45,17 +45,17 @@
     </form>
 </div>
 <script>
+
     function callback(res)
     {
-        debugger;
         //Success
         if (res.responseJSON['status'] == 1) {
-            $.notify("Success ...", "success");
-            $("#IndexCall").click();
+            GlobalFunc.Success();
+            $("#customerHome").click();
         }
         else
         {
-            $.notify(res.responseJSON['message'], "error");
+          GlobalFunc.Failure();
         }
     }
 </script>

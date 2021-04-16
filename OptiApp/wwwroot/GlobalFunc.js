@@ -2,7 +2,9 @@
 var GlobalFunc =
 {
     AjaxBegin: function () {
-        $.notify("Processing ...", "info");
+        $.bootstrapGrowl("Processing ...");
+
+        //$.notify("Processing ...", "info");
     },
 
     AjaxSuccess: function (data, that, callback) {
@@ -113,6 +115,24 @@ var GlobalFunc =
 
         $(divId).pqGrid(obj);
         $(".pq-search-txt").attr("autocomplete", "no");
+    },
+
+    //notification
+    Success: function ()
+    {
+        $.bootstrapGrowl("Success..", { type: 'success' });
+    },
+
+    Failure: function ()
+    {
+        $.bootstrapGrowl("Error!!", { type: 'danger' });
+
+        //$.bootstrapGrowl("Danger, Error!!", {
+        //    type: 'danger',
+        //    align: 'right',
+        //    width: 'auto',
+        //    allow_dismiss: true
+        //});
     }
 }
 

@@ -2681,7 +2681,7 @@ if ( !assert(function( div ) {
 // Support: IE<9
 // Use defaultValue in place of getAttribute("value")
 if ( !support.attributes || !assert(function( div ) {
-	div.innerHTML = "<input  autocomplete="off"  autocomplete="off"/>";
+	div.innerHTML = "<input  />";
 	div.firstChild.setAttribute( "value", "" );
 	return div.firstChild.getAttribute( "value" ) === "";
 }) ) {
@@ -4462,7 +4462,7 @@ function createSafeFragment( document ) {
 		input = document.createElement( "input" );
 
 	// Setup
-	div.innerHTML = "  <link/><table></table><a href='/a'>a</a><input  autocomplete="off"  autocomplete="off" type='checkbox'/>";
+	div.innerHTML = "  <link/><table></table><a href='/a'>a</a><input   type='checkbox'/>";
 
 	// IE strips leading whitespace when .innerHTML is used
 	support.leadingWhitespace = div.firstChild.nodeType === 3;
@@ -8133,7 +8133,7 @@ jQuery.fn.delay = function( time, type ) {
 	// Setup
 	div = document.createElement( "div" );
 	div.setAttribute( "className", "t" );
-	div.innerHTML = "  <link/><table></table><a href='/a'>a</a><input  autocomplete="off"  autocomplete="off" type='checkbox'/>";
+	div.innerHTML = "  <link/><table></table><a href='/a'>a</a><input   type='checkbox'/>";
 	a = div.getElementsByTagName( "a" )[ 0 ];
 
 	// Support: Windows Web Apps (WWA)

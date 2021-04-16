@@ -7,8 +7,8 @@
     $(function () {
 
         var columns = [
-            { title: "Name", editable: false, dataIndx: "name", width: 200, dataType: "string" },
-            { title: "Stock Count", editable: false, dataIndx: "stockCount", width: 100, dataType: "float", align: "left" }];
+            { title: "Customer", editable: false, dataIndx: "name", width: 200, dataType: "string" },
+            { title: "Appointment Date", editable: false, dataIndx: "stockCount", width: 100, dataType: "float", align: "left" }];
 
             GlobalFunc.IndexGrid("#pqGrid","Appointments List","Appointment",columns,"Appointment/GetAllData");
     });

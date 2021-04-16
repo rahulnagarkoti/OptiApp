@@ -99,7 +99,7 @@ $(function () {
  
         $("<span>Filter</span>").appendTo($toolbar);
  
-        $("<input  autocomplete="off"  autocomplete="off" type='text' class='pq-filter-txt'/>").appendTo($toolbar)
+        $("<input   type='text' class='pq-filter-txt'/>").appendTo($toolbar)
             .change(function (evt) {            
                 pqFilter.search();            
         });

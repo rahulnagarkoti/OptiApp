@@ -50,7 +50,7 @@ namespace OptiApp
             services.AddTransient<IProductBL,ProductBL>();
             services.AddTransient<IDistributorBL, DistrubutorBL>();
             services.AddTransient<IDoctorBL, DoctorBL>();
-            //services.AddTransient<IAppointmentBL, IAppointmentBL>();
+            services.AddTransient<IAppointmentBL, AppointmentBL>();
             services.AddTransient<IOrderBL, OrderBL>();
         }
 

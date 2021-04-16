@@ -1,51 +1,155 @@
 ﻿@model DataLayer.ViewModels.OrderViewModel
 @inject BuisnessLayer.Interface.IProductBL _product
+@inject BuisnessLayer.Interface.ICustomerBL _customer
 @{
-    var data = await _product.GetAllData();
-    var list = data.Select(a => new SelectListItem()
+    var data1 = await _product.GetAllData();
+    var data2 = await _customer.GetAllData();
+    var productList = data1.Select(a => new SelectListItem()
     {
         Value = a.Id.ToString(),
         Text = a.Name
-    })
-                          .ToList();
+    }).ToList();
+
+    var customerList = data2.Select(a => new SelectListItem()
+    {
+        Value = a.Id.ToString(),
+        Text = a.Name
+    }).ToList();
 
 }
+<style>
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    /*tr:nth-child(even) {
+            background-color: #dddddd;
+        }*/
+</style>
 
 <div class="col-lg-10">
     <form asp-action="Create" data-ajax="true" data-ajax-method="post" data-ajax-mode="after" data-ajax-update="#main-body" data-ajax-complete="callback">
         <div class="row">
-            <div class="form-group col-md-6">
+            <div class="form-group col-md-4">
                 <label asp-for="CustomerId"></label>
-                <select asp-for="CustomerId" class="form-control" asp-items="@list" )">
+                <select asp-for="CustomerId" class="form-control" asp-items="@customerList" )">
                     <option value="0">Select..</option>
                 </select>
                 <span asp-validation-for="CustomerId" class="text-danger"></span>
             </div>
             <div class="form-group col-md-2">
                 <label asp-for="LeftEye"></label>
-                <input  autocomplete="off"  autocomplete="off"  autocomplete="off" asp-for="LeftEye" class="form-control" />
+                <input autocomplete="off" asp-for="LeftEye" class="form-control" />
                 <span asp-validation-for="LeftEye" class="text-danger"></span>
-            </div> 
+            </div>
             <div class="form-group col-md-2">
                 <label asp-for="RightEye"></label>
-                <input  autocomplete="off"  autocomplete="off"  autocomplete="off" asp-for="RightEye" class="form-control" />
+                <input autocomplete="off" asp-for="RightEye" class="form-control" />
                 <span asp-validation-for="RightEye" class="text-danger"></span>
             </div>
+            <div class="form-group col-md-2">
+                <label asp-for="DeliveryDate"></label>
+                <input autocomplete="off" asp-for="DeliveryDate" class="form-control" />
+                <span asp-validation-for="DeliveryDate" class="text-danger"></span>
+            </div>
         </div>
+        <br />
+        <div class="row">
+            <div class="form-group col-md-12">
+                <div id="grid"></div>
+                <table>
+                    <tr>
+                        <td>
+                            <select class="form-control" id="product" asp-items="@productList" )">
+                                <option value="0">Select..</option>
+                            </select>
+                        </td>
+                        <td>
+                            <input type="number" id="quantity" class="form-control">
+                        </td>
+                        <td>
+                            <input type="number" id="price" class="form-control">
+                        </td>
+                        <td>
+                            <input type="number" id="total" class="form-control" readonly="readonly">
+                        </td>
+                        <td>
+                            <button type="button" id="add">Add</button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <br />
+
         <button type="submit" class="btn btn-primary">Submit</button>
         <a asp-area="" asp-controller="Order" asp-action="Index" id="IndexCall" class="btn btn-secondary" data-ajax="true" data-ajax-method="get" data-ajax-mode="replace" data-ajax-update='#main-body'>Cancel</a>
     </form>
 </div>
+
 <script>
+
+    $(function () {
+        var columns = [
+            { title: "Id", editable: false, hidden: true, dataIndx: "id", width: 0, dataType: "integer" },
+            { title: "Product", editable: false, dataIndx: "productName", width: 220, dataType: "string" },
+            //{ title: "Product", hidden: true, dataIndx: "productId", width: 220, dataType: "string" },
+            //{ title: "Price", editable: false, dataIndx: "price", width: 150, dataType: "float", align: "left" },
+            //{ title: "Quantity", editable: false, dataIndx: "quantity", width: 150, dataType: "integer", align: "left" },
+            //{ title: "Total", editable: false, dataIndx: "total", width: 150, dataType: "float", align: "left" },
+            /*{ title: "Action", editable: false,  width: 100, dataType: "float", align: "left" }*/];
+        var obj =
+        {
+            scrollModel: { pace: 'fast', autoFit: true, theme: true },
+            collapsible: false,
+            showHeader: true,
+            showTitle: false,
+            sortable: false,
+            stripeRows: true,
+            colModel: columns,
+            flex: true,
+            //pageModel: { type: "local", rPP: 50, rPPOptions: [10, 50, 100, 500, 1000] },
+            //filterModel: { on: true, mode: "AND", header: true },
+            //title: title,
+            selectionModel: { type: 'row', mode: 'single' },
+            //width:"80%",
+            height: "80%",
+            //showTop:false,
+        };
+        $("#grid").pqGrid(obj);
+
+        $("#add").on("click", function () {
+            let productName = $("#product option:selected").text();
+            let productId = $("#product option:selected").val();
+            let quantity = parseInt($("#quantity").val());
+            let price = parseFloat($("#price").val());
+            let total = quantity * price;
+
+
+            //Append a new row.
+            $("#grid").pqGrid("addRow", { rowData: { id: 20, productName: 'Colgate' } }
+            );
+
+            //$("#grid").pqGrid("addRow", { rowData: { id: 0, productName: productName, productId: productId, quantity: quantity, price: price, total: total } });
+        });
+
+    });
+
     function callback(res) {
-        debugger;
-        //Success
         if (res.responseJSON['status'] == 1) {
-            $.notify("Success ...", "success");
-            $("#IndexCall").click();
+            GlobalFunc.Success();
+            $("#orderHome").click();
         }
         else {
-            $.notify(res.responseJSON['message'], "error");
+            GlobalFunc.Failure();
         }
     }
 </script>

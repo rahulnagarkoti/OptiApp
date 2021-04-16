@@ -3,14 +3,14 @@
 <div class="col-lg-10">
     <form asp-action="Create" data-ajax="true" data-ajax-method="post" data-ajax-mode="after" data-ajax-update="#main-body" data-ajax-complete="callback">
         <div class="row">
-            <div class="form-group col-md-6">
+            <div class="form-group col-md-4">
                 <label asp-for="Name"></label>
-                <input  autocomplete="off"  autocomplete="off" asp-for="Name" class="form-control" />
+                <input   asp-for="Name" class="form-control" />
                 <span asp-validation-for="Name" class="text-danger"></span>
             </div>
             <div class="form-group col-md-4">
                 <label asp-for="ContactNumber"></label>
-                <input  autocomplete="off"  autocomplete="off" asp-for="ContactNumber" class="form-control" />
+                <input   asp-for="ContactNumber" class="form-control" />
                 <span asp-validation-for="ContactNumber" class="text-danger"></span>
             </div>
         </div>
@@ -20,14 +20,12 @@
 </div>
 <script>
     function callback(res) {
-        debugger;
-        //Success
         if (res.responseJSON['status'] == 1) {
-            $.notify("Success ...", "success");
-            $("#IndexCall").click();
+            GlobalFunc.Success();
+            $("#doctorHome").click();
         }
         else {
-            $.notify(res.responseJSON['message'], "error");
+            GlobalFunc.Failure();
         }
     }
 </script>
