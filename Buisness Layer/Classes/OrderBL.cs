@@ -38,13 +38,13 @@ namespace BuisnessLayer.Classes
                 {
                     CustomerId = data.CustomerId,
                     OrderDate = DateTime.Now,
+                    AdvanceAmount = data.AdvanceAmount,
+                    TotalAmount = data.TotalAmount,
+                    DeliveryDate = data.DeliveryDate,
                     Details = data.DetailsVM.Select(x => new Details
                     {
-                        AdvanceAmount = x.AdvanceAmount,
                         ProductId = x.ProductId,
                         Quantity = x.Quantity,
-                        TotalAmount = x.TotalAmount,
-                        DeliveryDate = x.DeliveryDate
                     }).ToList()
                 };
 
@@ -83,13 +83,13 @@ namespace BuisnessLayer.Classes
                 {
                     CustomerId = data.CustomerId,
                     OrderDate = DateTime.Now,
+                    AdvanceAmount=data.AdvanceAmount,
+                    DeliveryDate=data.DeliveryDate,
+                    TotalAmount=data.TotalAmount,
                     Details = data.DetailsVM.Select(x => new Details
                     {
-                        AdvanceAmount = x.AdvanceAmount,
                         ProductId = x.ProductId,
                         Quantity = x.Quantity,
-                        TotalAmount = x.TotalAmount,
-                        DeliveryDate = x.DeliveryDate
                     }).ToList()
                 };
                 _context.Order.Update(model);
@@ -124,15 +124,15 @@ namespace BuisnessLayer.Classes
                 CustomerId = x.CustomerId,
                 CustomerName = x.Customer.Name,
                 OrderDate = x.OrderDate,
+                AdvanceAmount = x.AdvanceAmount,
+                DeliveryDate = x.DeliveryDate,
+                TotalAmount = x.TotalAmount,
                 DetailsVM = x.Details.Select(z => new DetailsVM
                 {
-                    AdvanceAmount = z.AdvanceAmount,
-                    DeliveryDate = z.DeliveryDate,
                     OrderId = z.OrderId,
                     ProductId = z.ProductId,
                     Quantity = z.Quantity,
                     ProductName = z.Products.Name,
-                    TotalAmount = z.TotalAmount,
                 }).ToList(),
 
             }).FirstOrDefault();

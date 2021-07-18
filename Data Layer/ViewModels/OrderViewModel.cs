@@ -26,6 +26,17 @@ namespace DataLayer.ViewModels
         [Display(Name = "OrderDate")]
         public DateTime OrderDate { get; set; }
 
+        [Required]
+        [Display(Name = "Delivery Date")]
+        public DateTime DeliveryDate { get; set; }
+
+        [Required]
+        [Display(Name = "AdvanceAmount")]
+        public decimal AdvanceAmount { get; set; }
+
+        [Required]
+        [Display(Name = "TotalAmount")]
+        public decimal TotalAmount { get; set; }
 
         public IEnumerable<DetailsVM> DetailsVM { get; set; }
 
@@ -42,16 +53,6 @@ namespace DataLayer.ViewModels
         [Required]
         public int Quantity { get; set; }
 
-        [Required]
-        [Display(Name = "AdvanceAmount")]
-        public decimal AdvanceAmount { get; set; }
-
-        [Required]
-        [Display(Name = "TotalAmount")]
-        public decimal TotalAmount { get; set; }
-
-        [Required]
-        [Display(Name = "Delivery Date")]
-        public DateTime DeliveryDate { get; set; }
+        
     }
 }

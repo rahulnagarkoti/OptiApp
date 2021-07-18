@@ -4,14 +4,16 @@ using DataLayer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DataLayer.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200325010359_abc")]
+    partial class abc
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -82,11 +84,17 @@ namespace DataLayer.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<decimal>("AdvanceAmount");
+
+                    b.Property<DateTime>("DeliveryDate");
+
                     b.Property<int>("OrderId");
 
                     b.Property<int>("ProductId");
 
                     b.Property<int>("Quantity");
+
+                    b.Property<decimal>("TotalAmount");
 
                     b.HasKey("Id");
 
@@ -163,19 +171,13 @@ namespace DataLayer.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<decimal>("AdvanceAmount");
-
                     b.Property<int>("CustomerId");
-
-                    b.Property<DateTime>("DeliveryDate");
 
                     b.Property<decimal>("LeftEye");
 
                     b.Property<DateTime>("OrderDate");
 
                     b.Property<decimal>("RightEye");
-
-                    b.Property<decimal>("TotalAmount");
 
                     b.HasKey("Id");
 

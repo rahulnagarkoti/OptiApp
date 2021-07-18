@@ -12729,6 +12729,7 @@
       },
       "frameworks": {
         "netcoreapp2.1": {
+          "targetAlias": "netcoreapp2.1",
           "projectReferences": {
             "C:\\Users\\nagar\\source\\repos\\OptiPackage\\Buisness Layer\\BuisnessLayer.csproj": {
               "projectPath": "C:\\Users\\nagar\\source\\repos\\OptiPackage\\Buisness Layer\\BuisnessLayer.csproj"
@@ -12747,6 +12748,7 @@
     },
     "frameworks": {
       "netcoreapp2.1": {
+        "targetAlias": "netcoreapp2.1",
         "dependencies": {
           "Microsoft.AspNetCore.App": {
             "suppressParent": "All",
@@ -12784,7 +12786,7 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.113\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -24,6 +24,17 @@ namespace DataLayer.Models
         public decimal RightEye { get; set; }
         [Required]
         public DateTime OrderDate { get; set; }
+        [Required]
+        [Display(Name = "AdvanceAmount")]
+        public decimal AdvanceAmount { get; set; }
+
+        [Required]
+        [Display(Name = "TotalAmount")]
+        public decimal TotalAmount { get; set; }
+
+
+        [Required]
+        public DateTime DeliveryDate { get; set; }
 
         public IEnumerable<Details> Details { get; set; }
 
@@ -49,16 +60,6 @@ namespace DataLayer.Models
         [Required]
         public int Quantity { get; set; }
 
-        [Required]
-        [Display(Name = "AdvanceAmount")]
-        public decimal AdvanceAmount { get; set; }
 
-        [Required]
-        [Display(Name = "TotalAmount")]
-        public decimal TotalAmount { get; set; }
-
-
-        [Required]
-        public DateTime DeliveryDate { get; set; }
     }
 }
